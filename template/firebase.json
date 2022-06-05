@@ -1,0 +1,6 @@
+{
+    "react-native": {
+        "messaging_auto_init_enabled": true,
+        "messaging_android_headless_task_timeout": 3600000
+    }
+}

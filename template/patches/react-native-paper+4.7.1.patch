@@ -1,0 +1,17 @@
+diff --git a/node_modules/react-native-paper/src/components/Button.tsx b/node_modules/react-native-paper/src/components/Button.tsx
+index 1ac4a6c..41593cb 100644
+--- a/node_modules/react-native-paper/src/components/Button.tsx
++++ b/node_modules/react-native-paper/src/components/Button.tsx
+@@ -326,8 +326,10 @@ const styles = StyleSheet.create({
+     justifyContent: 'center',
+   },
+   icon: {
+-    marginLeft: 12,
+-    marginRight: -4,
++    // marginLeft: 12,
++    // marginRight: -4,
++    position: 'absolute',
++    left:16,
+   },
+   iconReverse: {
+     marginRight: 12,

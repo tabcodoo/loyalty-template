@@ -1,0 +1,4 @@
+export const APPALREADYOPENEDFROMNOTIFICATION = 'appAlreadyOpenedFromNotification';
+export const APPALREADYOPENEDFROMNOTIFICATION_REQUEST = 'appAlreadyOpenedFromNotification_request';
+export const APPALREADYOPENEDFROMNOTIFICATION_SUCCESS = 'appAlreadyOpenedFromNotification_success';
+export const APPALREADYOPENEDFROMNOTIFICATION_FAILURE = 'appAlreadyOpenedFromNotification_failure'; 

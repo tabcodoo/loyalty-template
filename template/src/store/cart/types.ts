@@ -1,0 +1,10 @@
+export const CART = 'cart';
+export const CART_REQUEST = 'cart_request';
+export const GET_CART_SUCCESS = 'GET_CART_SUCCESS';
+export const CART_SUCCESS = 'cart_success';
+export const CART_FAILURE = 'cart_failure';
+export const SHOPPING_TYPE = 'SHOPPING_TYPE';
+export const PAYMENT_METHOD = 'PAYMENT_METHOD';
+export const DELIVERY_METHOD = 'DELIVERY_METHOD';
+export const ADD_USED_COUPON = 'ADD_USED_COUPON';
+export const REMOVE_USED_COUPON = 'REMOVE_USED_COUPON';

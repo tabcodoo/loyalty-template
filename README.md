@@ -1,1 +1,1 @@
-# loyalty-template
+# loyaltyTemplate

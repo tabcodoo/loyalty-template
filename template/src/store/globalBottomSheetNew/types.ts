@@ -1,0 +1,4 @@
+export const GLOBALBOTTOMSHEET_NEW = 'globalBottomSheet_NEW';
+
+export const SET_GLOBAL_SHEET_NEW = 'SET_GLOBAL_SHEET_NEW';
+export const RESET_GLOBAL_SHEET_NEW = 'RESET_GLOBAL_SHEET_NEW';
