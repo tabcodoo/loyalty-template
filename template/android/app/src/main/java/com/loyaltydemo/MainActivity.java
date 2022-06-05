@@ -1,4 +1,4 @@
-package com.loyaltydemo1;
+package com.loyaltydemo;
 
 import com.facebook.react.ReactActivity;
 import android.os.Bundle; // here

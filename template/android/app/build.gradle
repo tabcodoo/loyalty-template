@@ -132,7 +132,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.loyaltydemo1"
+        applicationId "com.loyaltydemo"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 4

@@ -1,4 +1,4 @@
-package com.loyaltydemo1;
+package com.loyaltydemo;
 
 // com.myapp should be your package name
 import com.facebook.react.bridge.JSIModulePackage; // <- add
@@ -84,7 +84,7 @@ public class MainApplication extends Application implements ReactApplication {
          We use reflection here to pick up the class that initializes Flipper,
         since Flipper library is not available in release mode
         */
-        Class<?> aClass = Class.forName("com.loyaltydemo1.ReactNativeFlipper");
+        Class<?> aClass = Class.forName("com.loyaltydemo.ReactNativeFlipper");
         aClass
             .getMethod("initializeFlipper", Context.class, ReactInstanceManager.class)
             .invoke(null, context, reactInstanceManager);
