@@ -1,0 +1,36 @@
+name: Vidikovac
+
+on:
+    push:
+        branches: [main]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+    # This workflow contains a single job called "build"
+    build:
+        # The type of runner that the job will run on
+        runs-on: ubuntu-latest
+
+        # Steps represent a sequence of tasks that will be executed as part of the job
+        steps:
+            # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+            - uses: actions/checkout@v2
+
+            - uses: oleksiyrudenko/gha-git-credentials@v1
+              with:
+                  token: '${{ secrets.PERSONAL_TOKEN }}'
+              env:
+                  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+
+            - name: Copy SRC
+              uses: andstor/copycat-action@v3
+              with:
+                  personal_token: ${{ secrets.PERSONAL_TOKEN }}
+                  src_path: src
+                  dst_path: ./
+                  dst_owner: tabcodoo
+                  src_branch: main
+                  dst_branch: develop
+                  dst_repo_name: loyalty-vidikovac-mobile
+              env:
+                  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
