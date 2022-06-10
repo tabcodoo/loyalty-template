@@ -84,12 +84,12 @@ Make sure that the new project has develop branch, and every new change in the m
 
 # Constants file setup
 
-- [] applicationID (from Armin)
-- [] Primary & header color
-- [] webClientId (from firebase)
-- [] Terms and conditions
-- [] Social media links
-- [] About us (either locally or through web)
+- applicationID (from Armin)
+- Primary & header color
+- webClientId (from firebase)
+- Terms and conditions
+- Social media links
+- About us (either locally or through web)
 
 # Launch icons
 
@@ -129,17 +129,54 @@ To generate icons for android:
 
 # Notification icons
 
-## iOS
-
-Automatically launch icon is used
-
 ## Android
 
 Seems like svg might be the best option, if you try to use .png that is not the right format, icons could turn out all white, avoid that
 
 ![Alt text](./__readme-images/Android-notification-icon.png "Notifications")
 
+After it is generated change path to drawable inside AndroidManifest
+
+```
+  <meta-data
+    android:name="com.google.firebase.messaging.default_notification_icon"
+    android:resource="@drawable/ic_notification" />
+```
+
+## iOS
+
+Automatically launch icon is used
+
 # Splash screens
+
+## Android
+
+If you want to use only logo with color background, change these values.
+
+![Alt text](./__readme-images/Android-splashscreen.png "Splash screen")
+
+## iOS
+
+If you want to use only logo with color background, change these values.
+
+![Alt text](./__readme-images/iOS-splashscreen.png "Splash screen")
+
+# Animated splash screens
+
+https://www.npmjs.com/package/react-native-lottie-splash-screen
+
+```
+yarn remove react-native-splash-screen
+```
+
+Replace all imports
+![Alt text](./__readme-images/Android-animated-splashscreen.png "Animated Splash screen")
+
+```
+yarn add lottie-react-native
+```
+
+Adjust the assets
 
 # Firebase setup
 
