@@ -147,6 +147,40 @@ After it is generated change path to drawable inside AndroidManifest
 
 Automatically launch icon is used
 
+# Stores setup
+
+## Android
+
+https://play.google.com/console
+
+![Alt text](./__readme-images/store-android-1.png "Android store step 1")
+
+App name \*
+
+Short description \*
+
+Full description \*
+
+App icon \* 512x512
+
+Feature graphic \* 1024x500
+
+Phone screenshots \* Upload 2-8 phone screenshots. Screenshots must be PNG or JPEG, up to 8 MB each, 16:9 or 9:16 aspect ratio, with each side between 320 px and 3,840 px
+
+![Alt text](./__readme-images/store-android-2.png "Android store step 3")
+
+App or game \*
+
+Email address \*
+
+Category \*
+
+## iOS
+
+# Firebase setup
+
+# Testiranje notifikacija
+
 # Splash screens
 
 ## Android
@@ -178,10 +212,4 @@ yarn add lottie-react-native
 
 Adjust the assets
 
-# Firebase setup
-
 # Appcenter setup
-
-# Stores setup
-
-# Testiranje notifikacija
