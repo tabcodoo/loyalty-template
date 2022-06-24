@@ -32,6 +32,8 @@ git clone git@github.com:tabcodoo/template-test.git
 
 ```
 cd template-test
+git checkout -b develop
+git push --set-upstream origin develop
 ```
 
 # Make sure to set template repo to public before you try to use it:
@@ -84,12 +86,14 @@ Make sure that the new project has develop branch, and every new change in the m
 
 # Constants file setup
 
-- applicationID (from Armin)
+- applicationID (from Bojan)
 - Primary & header color
 - webClientId (from firebase)
 - Terms and conditions
 - Social media links
 - About us (either locally or through web)
+
+![Alt text](./__readme-images/constants-folder.png "Step1")
 
 # Launch icons
 
@@ -177,7 +181,48 @@ Category \*
 
 ## iOS
 
+https://appstoreconnect.apple.com/apps
+
+![Alt text](./__readme-images/store-iOS-1.png "iOS store step 1")
+
 # Firebase setup
+
+https://console.firebase.google.com/u/0/project/loyalty-1-7b2d8/overview
+
+## Android
+
+Add android app into the firebase project and follow the second step (other steps are already implemented)
+
+![Alt text](./__readme-images/firebase-android-1.png "Firebase setup Android")
+
+Generate keystore for production versions of the app
+
+- https://reactnative.dev/docs/signed-apk-android
+
+update firebase android project with certs
+
+```
+cd android && ./gradlew signingReport && cd ..
+```
+
+Add SHA fingerprints to the firebase android project so it could oAuth
+
+- https://console.firebase.google.com/u/0/project/loyalty-1-7b2d8/settings/general/android:com.tabco.chipas
+
+## iOS
+
+Add iOS app into the firebase project and follow the second step (other steps are already implemented)
+
+![Alt text](./__readme-images/firebase-ios-1.png "Firebase setup iOS")
+
+Get reverse client ID from downloaded firebase file and paste it in here
+![Alt text](./__readme-images/firebase-ios-2.png "Firebase setup iOS")
+
+Download certs from drive and upload them to firebase iOS config
+https://drive.google.com/drive/folders/1hCcEm2fGI0krXe4CeGDvMwPMlKjSGjMg
+
+As in previous projects we have here  
+https://console.firebase.google.com/u/0/project/loyalty-1-7b2d8/settings/cloudmessaging
 
 # Testiranje notifikacija
 
@@ -213,3 +258,32 @@ yarn add lottie-react-native
 Adjust the assets
 
 # Appcenter setup
+
+## Android
+
+Create android app
+
+- https://appcenter.ms/orgs/tabco/applications/create
+
+![Alt text](./__readme-images/appcenter-step-1.png "Appcenter step 1")
+
+![Alt text](./__readme-images/appcenter-step-2.png "Appcenter step 2")
+
+Create public group in project
+
+Configure branch as in other appcenter projects
+
+Put public link in asana task for specific project
+
+- https://app.asana.com/0/1202066263371626/1202103654021204/f
+
+Add webhook so it can notify when build is succesfull
+
+- https://appcenter.ms/orgs/tabco/apps/Chipas/settings/webhooks
+- https://hooks.slack.com/services/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
+
+## iOS
+
+If you want to use only logo with color background, change these values.
+
+![Alt text](./__readme-images/iOS-splashscreen.png "Splash screen")
