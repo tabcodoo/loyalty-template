@@ -12,6 +12,22 @@
 </p>
 <hr>
 
+# List of things needed to release apps
+
+- applicationID (from Bojan)
+- Primary & header color
+- webClientId (from firebase)
+- Terms and conditions
+- Social media links
+- About us (either locally or through web)
+
+- App name \*
+- Short description \*
+- Full description \*
+- App icon \* 512x512
+- Feature graphic \* 1024x500
+- Phone screenshots \* Upload 2-8 phone screenshots. Screenshots must be PNG or JPEG, up to 8 MB each, 16:9 or 9:16 aspect ratio, with each side between 320 px and 3,840 px
+
 # Quickstart
 
 # Create new repository in the organisation:
@@ -185,6 +201,8 @@ https://appstoreconnect.apple.com/apps
 
 ![Alt text](./__readme-images/store-iOS-1.png "iOS store step 1")
 
+App Previews and Screenshots (Use)
+
 # Firebase setup
 
 https://console.firebase.google.com/u/0/project/loyalty-1-7b2d8/overview
@@ -270,6 +288,8 @@ Create android app
 ![Alt text](./__readme-images/appcenter-step-2.png "Appcenter step 2")
 
 Create public group in project
+
+- https://appcenter.ms/orgs/tabco/apps/Chipas/distribute/distribution-groups
 
 Configure branch as in other appcenter projects
 
