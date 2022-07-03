@@ -1,5 +1,5 @@
 <resources>
    <string name="app_name">TabCo Loyalty Demo</string>
     <!-- <string name="app_name">Demo6 DEV Testing</string> -->
-    <!-- <string name="CodePushDeploymentKey">Ta7kNGKW2XPx1S1JxvIFsu43PTCCFSP60nbcz</string> -->
+    <string name="CodePushDeploymentKey">Ta7kNGKW2XPx1S1JxvIFsu43PTCCFSP60nbcz</string>
 </resources>

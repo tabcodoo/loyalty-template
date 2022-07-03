@@ -402,6 +402,7 @@ export default {
         userQrCode: 'Korisnički QR code',
         pointsTitle: 'Osvojeni bodovi',
         pointsRightItem: 'Detaljno',
+        delete: 'Obriši račun',
     },
     settings: {
         title: 'Postavke',

@@ -1,10 +1,19 @@
 import React, {useCallback, useState, useEffect} from 'react';
-import {View, StyleSheet, TouchableOpacity, Platform, ActivityIndicator, TextInput, Dimensions} from 'react-native';
+import {
+    View,
+    StyleSheet,
+    TouchableOpacity,
+    Platform,
+    ActivityIndicator,
+    TextInput,
+    Dimensions,
+    ScrollView,
+} from 'react-native';
 import {useTheme, Badge} from 'react-native-paper';
 import Header from 'components/common/LoggedInHeader';
 import Text from 'components/common/Text';
 import ShoppingBag from 'components/common/icons/ShoppingBag';
-import AntDesign from 'react-native-vector-icons/AntDesign'
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import color from 'color';
 import {useNavigation} from '@react-navigation/native';
 import api from 'services/api';
@@ -38,18 +47,18 @@ const Rooms = (props: any) => {
     const RoomItem = useCallback(
         ({item, index}) => (
             <TouchableOpacity
-            onPress={() => {  
-                setSearchTerm('')
-                selectObject(item)
-            }}
+                onPress={() => {
+                    setSearchTerm('');
+                    selectObject(item);
+                }}
                 style={{
                     height: isSalesman ? 'auto' : 55,
-                    width: isSalesman ? 'auto' : Dimensions.get('window').width*0.206,
+                    width: isSalesman ? 'auto' : Dimensions.get('window').width * 0.206,
                     backgroundColor: getBackgroundColor(item.isPressed),
                     borderRadius: 2,
                     justifyContent: 'center',
                     alignItems: 'center',
-                    marginRight: (index +1) % 4 > 0 ? 10 :0,
+                    marginRight: (index + 1) % 4 > 0 ? 10 : 0,
                     marginBottom: 10,
                     paddingVertical: isSalesman ? 20 : 0,
                     paddingHorizontal: isSalesman ? 30 : 0,
@@ -115,7 +124,7 @@ const Rooms = (props: any) => {
                 }
             />
 
-        <View
+            <View
                 style={{
                     flexDirection: 'row',
                     alignItems: 'center',
@@ -139,11 +148,13 @@ const Rooms = (props: any) => {
                         color: 'gray',
                     }}
                     // autoFocus
-                    placeholder={isWaiter
-                        ? t('room.searchTable')
-                        : isSalesman
-                        ? t('salesman.searchClient')
-                        : t('room.searchRoom')}
+                    placeholder={
+                        isWaiter
+                            ? t('room.searchTable')
+                            : isSalesman
+                            ? t('salesman.searchClient')
+                            : t('room.searchRoom')
+                    }
                     value={searchTerm}
                     onChangeText={setSearchTerm}
                 />
@@ -173,28 +184,32 @@ const Rooms = (props: any) => {
                     : t('room.pickRoom')}
             </Text>
 
-            {!filteredObjects.length ? isLoading ? (
-                <ActivityIndicator
-                    size="small"
-                    color={colors.primary}
-                    style={{
-                        alignSelf: 'center',
-                        margin: 20,
-                    }}
-                />
-            ) : <Text style={{textAlign:'center', marginTop:20}} >{t('room.noResults')}</Text> : (
-                <View
-                    style={{
+            {!filteredObjects.length ? (
+                isLoading ? (
+                    <ActivityIndicator
+                        size="small"
+                        color={colors.primary}
+                        style={{
+                            alignSelf: 'center',
+                            margin: 20,
+                        }}
+                    />
+                ) : (
+                    <Text style={{textAlign: 'center', marginTop: 20}}>{t('room.noResults')}</Text>
+                )
+            ) : (
+                <ScrollView
+                    contentContainerStyle={{
                         marginHorizontal: 16,
-                        paddingBottom:10,
+                        paddingBottom: 10,
                         flexDirection: 'row',
                         flexWrap: 'wrap',
-                        alignItems:'center',
+                        alignItems: 'center',
                     }}>
                     {filteredObjects.map((item, index) => (
                         <RoomItem item={item} index={index} />
                     ))}
-                </View>
+                </ScrollView>
             )}
         </View>
     );

@@ -101,7 +101,7 @@ const CouponDetailsContainer = (props: any) => {
     useEffect(() => {
         let interval = null;
         let unsubscribe = null;
-        let expire = moment(activatedAt).add(5, 'minutes').add(1, 'seconds');
+        let expire = moment.utc(activatedAt).add(5, 'minutes').add(1, 'seconds');
 
         if (activatedAt && moment().isBefore(expire) && !coupon?.isUsed) {
             setTimer(moment(expire - moment()).format('mm:ss'));

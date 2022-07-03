@@ -48,11 +48,11 @@ export default function (state = INITIAL_STATE, action) {
                         // false values first
                         (x.isUsed ||
                             moment().isAfter(
-                                moment(x.dateActivated).add(5, 'minutes').add(1, 'seconds'),
+                                moment.utc(x.dateActivated).add(5, 'minutes').add(1, 'seconds'),
                             )) -
                         (y.isUsed ||
                             moment().isAfter(
-                                moment(y.dateActivated).add(5, 'minutes').add(1, 'seconds'),
+                                moment.utc(y.dateActivated).add(5, 'minutes').add(1, 'seconds'),
                             )),
                 ),
                 requestObject: action.payload.requestObject,
@@ -65,13 +65,20 @@ export default function (state = INITIAL_STATE, action) {
                         // false values first
                         (x.isUsed ||
                             moment().isAfter(
-                                moment(x.dateActivated).add(5, 'minutes').add(1, 'seconds'),
+                                moment.utc(x.dateActivated).add(5, 'minutes').add(1, 'seconds'),
                             )) -
                         (y.isUsed ||
                             moment().isAfter(
-                                moment(y.dateActivated).add(5, 'minutes').add(1, 'seconds'),
+                                moment.utc(y.dateActivated).add(5, 'minutes').add(1, 'seconds'),
                             )),
                 ),
+                requestObject: {
+                    ...state.requestObject,
+                    paginationModel: {
+                        ...state.requestObject.paginationModel,
+                        index: action.payload.length,
+                    },
+                },
             };
         case types.ACTIVATE_COUPON:
             return {

@@ -16,6 +16,7 @@ import BottomSheet, {BottomSheetModal, BottomSheetModalProvider} from '@gorhom/b
 import {KeyboardAwareScrollView} from 'react-native-keyboard-aware-scroll-view';
 import QRCode from 'react-native-qrcode-svg';
 import * as Animatable from 'react-native-animatable';
+import {GoogleSignin} from '@react-native-community/google-signin';
 
 let {width} = Dimensions.get('window');
 const ProfileContainer = (props: any) => {
@@ -47,9 +48,19 @@ const ProfileContainer = (props: any) => {
         dispatch(actions.changePassword(data, (key) => t(key)));
     };
 
+    let deleteUser = async () => {
+        try {
+            GoogleSignin.signOut();
+            await api.get('identity/delete-user-account');
+            api.setToken('');
+            dispatch(actions.reset());
+        } catch (error) {}
+    };
+
     return (
         <View style={{flex: 1}}>
             <Profile {...props} {...{t, user, openUserIdSheet, changePassword}} />
+            <Button onPress={deleteUser} label={t('profile.delete')} mode="contained" />
             {opened && (
                 <Animatable.View
                     animation={'fadeIn'}
