@@ -18,7 +18,7 @@ const CouponContainer = (props: any) => {
 
     useEffect(() => {
         let interval = null;
-        let expire = moment(coupon?.dateActivated).add(5, 'minutes').add(1, 'seconds');
+        let expire = moment.utc(coupon?.dateActivated).add(5, 'minutes').add(1, 'seconds');
 
         if (
             !coupon?.isSpecialCoupon &&

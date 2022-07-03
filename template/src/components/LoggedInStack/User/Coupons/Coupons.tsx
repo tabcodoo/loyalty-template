@@ -340,7 +340,7 @@ const Coupons = (props: any) => {
 
                         //     fetchCoupons();
                         // }}
-                        onEndReachedThreshold={0.5}
+                        // onEndReachedThreshold={0.8}
                         ListFooterComponent={() =>
                             coupons.length > 0 && loading ? (
                                 <ActivityIndicator size={'small'} />
